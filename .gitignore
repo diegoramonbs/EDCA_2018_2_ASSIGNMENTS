@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# virtualenv
+.venv/
+venv/
+ENV/
+env/
+
+# Linux Backup files
+*~
+
+# Cpp
+assignment2/
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.out
+*.exe
