@@ -4,7 +4,7 @@ Repositório de implementações das atividades práticas da cadeira Estrutura d
 
 
 ## Atividade 1
-Implementação dos algoritmos de ordenação insert e selection
+Implementação dos algoritmos de ordenação insertsort e selectionsort
 
 ## Atividade 2
-Implementação dos algoritmos de ordenação merge e quick
+Implementação dos algoritmos de ordenação mergesort e quicksort
