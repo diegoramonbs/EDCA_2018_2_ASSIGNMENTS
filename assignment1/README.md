@@ -4,7 +4,9 @@ Todas as implementações são baseadas nos pseudo-códigos do livro **Introduct
 
 1. Insertion Sort 
 2. Selection Sort
-3. Default Sort
+3. Quick sort
+4. Merge Sort
+5. Default Sort
 
 ## Execução:
 O programa recebe como argumento um inteiro **n** representado o algoritmo, com base na numeração acima. 
@@ -18,4 +20,3 @@ Os algoritmos são testados com listas de tamanhos e elementos aleatórios. Tamb
 ```
 $  python tests.py
 ```
-
