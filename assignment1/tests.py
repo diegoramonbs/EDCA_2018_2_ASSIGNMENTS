@@ -58,6 +58,14 @@ class SelectionSortTest(TestSortBase):
     def test(self):
         self.main(Sort.selection_sort)
 
+class QuickSortSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.quick_sort)
+
+class MergeSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.merge_sort)
+
 
 if __name__ == '__main__':
     unittest.main()
