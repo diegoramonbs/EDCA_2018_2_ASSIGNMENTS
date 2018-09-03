@@ -14,7 +14,9 @@ def get(arg,data):
     options = {
         1: Sort.insertion_sort,
         2: Sort.selection_sort,
-        3: sorted
+        3: Sort.quick_sort,
+        4: Sort.merge_sort,
+        5: sorted
     }
     algorithm = options.get(arg)
     #timed = Utils.execution_time(algorithm)
