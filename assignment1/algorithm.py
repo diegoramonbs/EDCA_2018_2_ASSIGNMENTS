@@ -105,38 +105,40 @@ class Sort(object):
         return arr
 
     @staticmethod
-    def merge_sort(list):
-        def recursive(list):
-            if len(list)>1:
-                mid = len(list)//2
-                lefthalf = list[:mid]
-                righthalf = list[mid:]
+    def merge_sort(arr):
+        def recursive(arr):
+            if len(arr)>1:
+                m = len(arr)//2
+                L = arr[:m]
+                R = arr[m:]
 
-                recursive(lefthalf)
-                recursive(righthalf)
+                recursive(L)
+                recursive(R)
 
                 i, j, k = 0, 0, 0
 
-                while i < len(lefthalf) and j < len(righthalf):
-                    if lefthalf[i] < righthalf[j]:
-                        list[k]=lefthalf[i]
+                while i < len(L) and j < len(R):
+                    if L[i] < R[j]:
+                        arr[k]=L[i]
                         i=i+1
                     else:
-                        list[k]=righthalf[j]
+                        arr[k]=R[j]
                         j=j+1
                     k=k+1
 
-                while i < len(lefthalf):
-                    list[k]=lefthalf[i]
+                while i < len(L):
+                    arr[k]=L[i]
                     i=i+1
                     k=k+1
 
-                while j < len(righthalf):
-                    list[k]=righthalf[j]
+                while j < len(R):
+                    arr[k]=R[j]
                     j=j+1
                     k=k+1
-            return list
+            return arr
 
-        if not list:
+        if not arr:
             return None
-        return recursive(list)
+        if len(arr) < 2:
+            return arr
+        return recursive(arr)
