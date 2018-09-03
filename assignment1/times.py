@@ -24,9 +24,14 @@ if __name__ == '__main__':
     # Link to the decorator used in the measurement of the runtime function.
     isort_timed = Utils.execution_time(Sort.insertion_sort)
     ssort_timed = Utils.execution_time(Sort.selection_sort)
+    qsort_timed = Utils.execution_time(Sort.quick_sort)
+    msort_timed = Utils.execution_time(Sort.merge_sort)
 
     # Executes the algorithms.
     isort_timed(data)
     ssort_timed(data)
+    qsort_timed(data)
+    msort_timed(data)
+    
 
 
