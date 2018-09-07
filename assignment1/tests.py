@@ -66,6 +66,17 @@ class MergeSortTest(TestSortBase):
     def test(self):
         self.main(Sort.merge_sort)
 
+class CountingSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.counting_sort)
+
+class RadixSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.radix_sort)
+
+"""class BucketSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.bucket_sort)"""
 
 if __name__ == '__main__':
     unittest.main()

@@ -142,3 +142,66 @@ class Sort(object):
         if len(arr) < 2:
             return arr
         return recursive(arr)
+
+
+    @staticmethod
+    def counting_sort(arr):
+        if not arr:
+            return None
+
+        if len(arr) < 2:
+            return arr
+
+        length = len(arr)
+        largest = max(arr)+1
+        count = [0] * largest
+        output = [None] * length
+
+        for i in arr:
+            count[i] += 1
+
+        for i in range(1, largest):
+            count[i] += count[i-1]
+
+        for i in reversed(range(0, length)):
+            output[count[arr[i]]-1] = arr[i]
+            count[arr[i]] -= 1
+
+        return output
+
+    @staticmethod
+    def radix_sort(arr):
+        def counting_sort_radix(arr, k):
+            if not arr:
+                return None
+
+            if len(arr) < 2:
+                return arr
+
+            length = len(arr)
+            largest = max(arr)+1
+            count = [0] * largest
+            output = [None] * length
+
+            for i in arr:
+                count[(i/k)%10] += 1
+
+            for i in range(1, largest):
+                count[i] += count[i-1]
+
+            for i in reversed(range(0, length)):
+                output[count[ (arr[i]/k)%10]-1] = arr[i]
+                count[(arr[i]/k)%10] -= 1
+
+            return output
+
+        m = max(arr)
+        k = 1
+        while m/k > 0:
+            arr = counting_sort_radix(arr, k)
+            k *= 10
+        return arr
+
+    @staticmethod
+    def bucket_sort(arr):
+        pass

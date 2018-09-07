@@ -16,7 +16,8 @@ def get(arg,data):
         2: Sort.selection_sort,
         3: Sort.quick_sort,
         4: Sort.merge_sort,
-        5: sorted
+        5: Sort.counting_sort,
+        6: sorted
     }
     algorithm = options.get(arg)
     #timed = Utils.execution_time(algorithm)
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     first = True
     choice = int(sys.argv[1])
 
-    assert( choice >= 1 and choice <= 3)
+    assert( choice >= 1 and choice <= 6)
 
     for line in enumerate(sys.stdin):
         if first:
