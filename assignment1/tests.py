@@ -50,6 +50,42 @@ class TestSortBase(unittest.TestCase):
         self.assertEqual(True, compare(proc, refe))
 
 
+class TestSortBucket(unittest.TestCase):
+
+    def main(self, algo):
+        self.algo = algo
+        self.randomTest()
+        self.inverseTest()
+        self.orderedTest()
+
+    def randomTest(self):
+        print("Running test random {}".format(self.algo.__name__))
+        n = random.randint(0, 1000)
+        data = [random.uniform(0, 1) for _ in range(0, n)]
+        proc = self.algo(data)
+        refe = sorted(data)
+        self.assertEqual(True, compare(proc, refe))
+
+    def inverseTest(self):
+        print("Running test inverse {}".format(self.algo.__name__))
+        n = random.randint(0, 1000)
+        data = [ random.uniform(0, 1) for x in range(1, n)]
+        data = sorted(data)
+        data = data[::1] # Inverse the list
+        proc = self.algo(data)
+        refe = sorted(data)
+        self.assertEqual(True, compare(proc, refe))
+
+    def orderedTest(self):
+        print("Running test ordered {}".format(self.algo.__name__))
+        n = random.randint(0, 1000)
+        data = [ random.uniform(0, 1) for x in range(1, n)]
+        data = sorted(data)
+        proc = self.algo(data)
+        refe = sorted(data)
+        self.assertEqual(True, compare(proc, refe))
+
+
 class InsertionSortTest(TestSortBase):
     def test(self):
         self.main(Sort.insertion_sort)
@@ -74,9 +110,9 @@ class RadixSortTest(TestSortBase):
     def test(self):
         self.main(Sort.radix_sort)
 
-"""class BucketSortTest(TestSortBase):
+class BucketSortTest(TestSortBucket):
     def test(self):
-        self.main(Sort.bucket_sort)"""
+        self.main(Sort.bucket_sort)
 
 if __name__ == '__main__':
     unittest.main()

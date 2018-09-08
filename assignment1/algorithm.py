@@ -32,11 +32,7 @@ class Utils(object):
     @staticmethod
     def swap(a, b):
         assert(type(a) == type(b))
-        c = a
-        a = b
-        b = c
-        return a, b
-
+        return b, a
 
 class Sort(object):
 
@@ -203,5 +199,27 @@ class Sort(object):
         return arr
 
     @staticmethod
-    def bucket_sort(arr):
+    def bucket_sort(arr, num_bucket=10):
+        if not arr:
+            return arr
+
+        bucket = [[] for b in range(num_bucket)]
+        output = []
+
+        for i in range(len(arr)):
+            bucket[int(arr[i] * num_bucket)].append(arr[i])
+
+        for i in range(num_bucket):
+            Sort.insertion_sort(bucket[i])
+
+        for i in range(num_bucket):
+            if bucket[i]:
+                output += bucket[i]
+
+        return output
+
+
+    @staticmethod
+    def heap_sort(arr):
         pass
+
