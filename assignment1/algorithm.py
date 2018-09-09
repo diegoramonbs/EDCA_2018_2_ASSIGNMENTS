@@ -34,6 +34,48 @@ class Utils(object):
         assert(type(a) == type(b))
         return b, a
 
+class Heap(object):
+    def __init__(self, data):
+        self.data = data
+        self.size = len(data)
+
+        self.build()
+
+    def build(self):
+        for i in range(self.size//2, -1, -1):
+            self._heapify(i)
+
+    def _heapify(self, i):
+        left = 2*i+1
+        right = 2*i+2
+        largest = i
+
+        if left < self.size and self.data[left] > self.data[i]:
+            largest = left
+        else:
+            largest = i
+        if right < self.size and self.data[right] > self.data[largest]:
+            largest = right
+        if largest != i:
+            self.data[i], self.data[largest] = self.data[largest], self.data[i]
+            self._heapify(largest)
+
+    def pop(self):
+        ret = self.data[0]
+        del self.data[0]
+        self._heapify(0)
+        return ret
+
+    def top(self):
+        return self.data[0]
+
+    def sort(self):
+        for i in range(self.size-1, -1, -1):
+             self.data[0], self.data[i] = self.data[i], self.data[0]
+             self.size -= 1
+             self._heapify(0)
+        return self.data
+
 class Sort(object):
 
     @staticmethod
@@ -221,5 +263,11 @@ class Sort(object):
 
     @staticmethod
     def heap_sort(arr):
-        pass
+        if not arr:
+            return None
+        if len(arr) < 2:
+            return arr
+
+        heap = Heap(arr)
+        return heap.sort()
 

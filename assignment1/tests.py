@@ -114,5 +114,9 @@ class BucketSortTest(TestSortBucket):
     def test(self):
         self.main(Sort.bucket_sort)
 
+class HeapSortTest(TestSortBase):
+    def test(self):
+        self.main(Sort.heap_sort)
+
 if __name__ == '__main__':
     unittest.main()
