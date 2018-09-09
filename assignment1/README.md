@@ -4,9 +4,13 @@ Todas as implementações são baseadas nos pseudo-códigos do livro **Introduct
 
 1. Insertion Sort 
 2. Selection Sort
-3. Quick sort
+3. Quick Sort
 4. Merge Sort
-5. Default Sort
+5. Couting Sort
+6. Radix Sort
+7. Bucket Sort 
+8. Heap Sort
+9. Default Sort
 
 ## Execução:
 O programa recebe como argumento um inteiro **n** representado o algoritmo, com base na numeração acima. 
