@@ -62,9 +62,9 @@ def bsearch(v, p, r, key):
         return None
     else:
         if v[m] < key:
-            return bsearch(v, m+1, r, key)
+            return bsearch(v, m+1, r, key)   # T([n/2])
         else:
-            return bsearch(v, p, m-1, key)
+            return bsearch(v, p, m-1, key)   # T([n/2])
 
 if __name__ == '__main__':
     v = [1,3,7,8,20,29,47,201,1204]
