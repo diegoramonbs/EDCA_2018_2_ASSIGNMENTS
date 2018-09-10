@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Author: Diego
+
 from algorithm import Sort, Utils
 import random
 
@@ -32,6 +34,6 @@ if __name__ == '__main__':
     ssort_timed(data)
     qsort_timed(data)
     msort_timed(data)
-    
+
 
 

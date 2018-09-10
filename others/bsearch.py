@@ -1,3 +1,6 @@
+
+# Author: Diego
+
 """
 
 Bynary search recurrence:

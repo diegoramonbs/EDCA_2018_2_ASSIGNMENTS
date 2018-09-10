@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Author: Diego
+
 # Reference: Introduction to Algorithms - Thomas H. Cormen et al
 
 from functools import wraps
