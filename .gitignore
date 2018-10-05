@@ -18,7 +18,6 @@ env/
 *~
 
 # Cpp
-assignment2/
 *.o
 *.obj
 *.a
