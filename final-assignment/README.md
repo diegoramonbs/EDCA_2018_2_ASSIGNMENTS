@@ -1,9 +1,9 @@
-## Resolução de problemas através de Meta-heurísticas 
+## Resolução do problema do caxeiro viajante através da meta-heurística algoritmo genético
 
 
 ## Execução:
 
 ```
-$  python knapsack.py [file]
+$  python TSP.py [file]
 ```
 
