@@ -17,6 +17,8 @@ env/
 # Linux Backup files
 *~
 
+final-assignment/referências
+
 # Cpp
 *.o
 *.obj
