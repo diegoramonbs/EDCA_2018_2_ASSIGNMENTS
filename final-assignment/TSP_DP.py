@@ -17,6 +17,7 @@
 import math
 import sys
 import itertools
+import time
 
 # Traveling Salesman Problem(TSP)
 class TSP:
@@ -113,7 +114,9 @@ if __name__ == '__main__':
         N, =  [int(x) for x in next(f).split()]
         graph = [[int(x) for x in line.split()] for line in f]
 
+    start_time = time.time()
     result = TSP(graph, N).run()
+    print("Executin dynamic programming TSP took {:.10f} seconds.".format(time.time() - start_time))
 
     print('instância: {0}'.format(filename))
     print('valor: {0}'.format(result[-1]))
